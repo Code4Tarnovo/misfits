@@ -16,6 +16,8 @@ namespace Heroe
         private int heroSize = 50;
         private Image heroImage = Image.FromFile(@"C:\Users\Andi\Desktop\misfits\Heroe\Heroe\Resources\hero.png");
         private Image map = Image.FromFile(@"C:\Users\Andi\Desktop\misfits\Heroe\Heroe\Resources\MapDefault.png");
+        private bool[] mapObjects;
+        private int freeMapPlaces = 99;
 
         public Survival()
         {
@@ -72,6 +74,59 @@ namespace Heroe
 
             pbHero.Image = heroImage;
             ChangeHeroLocation();
+
+            mapObjects = new bool[100];
+        }
+
+        private void Survival_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D)
+            {
+                if (heroLocation.X < pbSurvival.Size.Height - heroSize * 2)
+                {
+                    heroLocation.X += heroSize;
+                }
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                if (heroLocation.X > heroSize)
+                {
+                    heroLocation.X -= heroSize;
+                }
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                if (heroLocation.Y < pbSurvival.Size.Width - heroSize * 2)
+                {
+                    heroLocation.Y += heroSize;
+                }
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                if (heroLocation.Y > heroSize)
+                {
+                    heroLocation.Y -= heroSize;
+                }
+            }
+            ChangeHeroLocation();
+        }
+
+
+        private void Survival_KeyDown(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void randomPictureBoxTrap()
+        {
+            Random randomNumber = new Random();
+            int position = randomNumber.Next(0, freeMapPlaces);
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            randomPictureBoxTrap();
         }
     }
 }

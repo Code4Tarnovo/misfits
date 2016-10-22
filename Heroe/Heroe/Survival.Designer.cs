@@ -47,11 +47,12 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1;
+            this.timer1.Interval = 7000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pbHero
             // 
-            this.pbHero.Location = new System.Drawing.Point(241, 102);
+            this.pbHero.Location = new System.Drawing.Point(250, 250);
             this.pbHero.Name = "pbHero";
             this.pbHero.Size = new System.Drawing.Size(50, 50);
             this.pbHero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -65,7 +66,10 @@
             this.ClientSize = new System.Drawing.Size(600, 600);
             this.Controls.Add(this.pbHero);
             this.Controls.Add(this.pbSurvival);
+            this.KeyPreview = true;
             this.Name = "Survival";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Survival_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Survival_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHero)).EndInit();
             this.ResumeLayout(false);

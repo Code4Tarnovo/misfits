@@ -111,6 +111,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LogoIdea4.png" />
+    <None Include="Resources\RegisterTemplate.png" />
+    <None Include="Resources\PlayTemplate.png" />
+    <None Include="Resources\PasswordTemplate.png" />
+    <None Include="Resources\NameTemplate.png" />
+    <None Include="Resources\LogoIdea1.png" />
     <None Include="Resources\UnarmedCannon.png" />
     <None Include="Resources\MapDefault.png" />
     <None Include="Resources\ArmedCannon.png" />

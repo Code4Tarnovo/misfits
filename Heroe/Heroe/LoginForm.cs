@@ -25,11 +25,6 @@ namespace Heroe
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pbGuest_Click(object sender, EventArgs e)
         {
             using (ChooseGameMode ChooseGameModeForm = new ChooseGameMode())
@@ -74,6 +69,15 @@ namespace Heroe
             {
             
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            pbLogo.Image = Properties.Resources.Logo;
+            pbUsername.Image = Properties.Resources.UserName;
+            pbPassword.Image = Properties.Resources.Password;
+            pbRegister.Image = Properties.Resources.Register;
+            pbPlay.Image = Properties.Resources.Play;
         }
     }
 }
