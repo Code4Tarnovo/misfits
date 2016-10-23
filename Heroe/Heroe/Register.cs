@@ -32,7 +32,7 @@ namespace Heroe
                 }
                 else
                 {
-                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\sdfko\Userinfo.mdf"";Integrated Security=True");
+                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Andi\Desktop\Heroe\Heroe\Database1.mdf;Integrated Security=True;");
                     SqlDataAdapter sda = new SqlDataAdapter("Select * From UserInfo where Username='" + txtUsername.Text + "'", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -42,7 +42,7 @@ namespace Heroe
                     }
                     else
                     {
-                        SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\sdfko\Userinfo.mdf"";Integrated Security=True");
+                        SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Andi\Desktop\Heroe\Heroe\Database1.mdf;Integrated Security=True");
                         con1.Open();
                         string s = "0";
                         SqlCommand sda1 = new SqlCommand("INSERT INTO UserInfo(Username,First_Name,Last_Name,Password) VALUES ('" + txtUsername.Text + "','" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtPassword.Text + "')", con1);

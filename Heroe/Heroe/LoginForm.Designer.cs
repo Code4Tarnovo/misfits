@@ -47,6 +47,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtUsername.Location = new System.Drawing.Point(140, 105);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
@@ -55,9 +56,11 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtPassword.Location = new System.Drawing.Point(140, 143);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(154, 32);
             this.txtPassword.TabIndex = 7;
             // 
@@ -65,12 +68,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(177, 276);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(95, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(92, 19);
             this.materialLabel1.TabIndex = 8;
             this.materialLabel1.Text = "I\'m a GUEST";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);

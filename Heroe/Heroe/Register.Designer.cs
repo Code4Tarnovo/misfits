@@ -100,7 +100,7 @@
             this.lbConfirmPassword.Depth = 0;
             this.lbConfirmPassword.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbConfirmPassword.Location = new System.Drawing.Point(9, 241);
+            this.lbConfirmPassword.Location = new System.Drawing.Point(-1, 240);
             this.lbConfirmPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(132, 19);
@@ -132,6 +132,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(188, 192);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(121, 20);
             this.txtPassword.TabIndex = 12;
             // 
@@ -139,6 +140,7 @@
             // 
             this.txtConfirmPass.Location = new System.Drawing.Point(188, 240);
             this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(121, 20);
             this.txtConfirmPass.TabIndex = 13;
             // 

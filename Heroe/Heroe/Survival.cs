@@ -20,6 +20,7 @@ namespace Heroe
         private int freeMapPlaces_Count = 99;
         private int[] freeMapPlaces;
         private int heroTurns = 0;
+        private PictureBox pictureBox;
 
         public Survival()
         {
@@ -28,44 +29,22 @@ namespace Heroe
 
         }
 
-        private void pictureBox1_Click(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Right)
-            {
-                if (heroLocation.X < pbSurvival.Size.Height - heroSize)
-                {
-                    heroLocation.X += heroSize;
-                }
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                if (heroLocation.X > heroSize)
-                {
-                    heroLocation.X -= heroSize;
-                }
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                if (heroLocation.Y < pbSurvival.Size.Width - heroSize)
-                {
-                    heroLocation.Y += heroSize;
-                }
-            }
-            if (e.KeyCode == Keys.Up)
-            {
-                if (heroLocation.Y > heroSize)
-                {
-                    heroLocation.Y -= heroSize;
-                }
-            }
-            ChangeHeroLocation();
-        }
-
         private void ChangeHeroLocation()
         {
             //Bitmap mapBitmap = Properties.Resources.MapDefault;
             //Graphics mapGraphics = Graphics.FromImage(mapBitmap);
             pbHero.Location = heroLocation;
+            int location = ((heroLocation.X / 50) - 1) * 10 + (heroLocation.Y / 50) - 1;
+            if (mapObjects[location] == true)
+            {
+                using (GameOver gameOverForm = new GameOver())
+                {
+                    if (gameOverForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        gameOverForm.ShowDialog();
+                    }
+                }
+            }
         }
 
 
@@ -75,11 +54,9 @@ namespace Heroe
             pbSurvival.Image = mapBitmap;
 
             pbHero.Image = heroImage;
-            ChangeHeroLocation();
-
             mapObjects = new bool[100];
 
-            randomPictureBoxTrap();
+            ChangeHeroLocation();
         }
 
         private void Survival_KeyDown(object sender, KeyEventArgs e)
@@ -124,6 +101,7 @@ namespace Heroe
                 }
             }
             ChangeHeroLocation();
+            HeroTurn();
         }
 
 
@@ -132,31 +110,52 @@ namespace Heroe
 
         }
 
-        private void randomPictureBoxTrap()
+        private void RandomPictureBoxTrap()
         {
             Random randomNumber = new Random();
             int position = randomNumber.Next(0, freeMapPlaces_Count);
             mapObjects[position] = true;
 
-            PictureBox pictureBox = new PictureBox();
+            pictureBox = new PictureBox();
             pictureBox.Location = new Point(((position / 10) + 1) * 50, ((position % 10) + 1) * 50);
             pictureBox.Name = "pbTrapImage" + (100 - freeMapPlaces_Count);
             pictureBox.Size = new Size(50, 50);
-            pictureBox.Image = Properties.Resources.BlockBrake3;
+            pictureBox.Image = Properties.Resources.BlockBrake1;
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.Visible = true;
             this.Controls.Add(pictureBox);
 
+            mapObjects[position] = true;
+
+            pictureBox.BringToFront();
+            pbHero.BringToFront();
             freeMapPlaces_Count--;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void SecondTypeTrap()
         {
-            
+            pictureBox.Image = Properties.Resources.BlockBrake2;
+        }
+
+        private void ThirdTypeTrap()
+        {
+            pictureBox.Image = Properties.Resources.BlockBrake3;
+        }
+
+        private void HeroTurn()
+        {
             heroTurns++;
-            if (heroTurns == 5)
+            if (heroTurns == 8)
             {
-                randomPictureBoxTrap();
+                RandomPictureBoxTrap();
+            }
+            if (heroTurns == 9)
+            {
+                SecondTypeTrap();
+            }
+            if (heroTurns == 10)
+            {
+                ThirdTypeTrap();
                 heroTurns = 0;
             }
         }

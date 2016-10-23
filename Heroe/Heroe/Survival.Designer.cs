@@ -48,7 +48,6 @@
             // Turn
             // 
             this.Turn.Interval = 500;
-            this.Turn.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pbHero
             // 
