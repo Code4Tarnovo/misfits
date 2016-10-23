@@ -12,37 +12,52 @@ namespace Heroe
 {
     public partial class ChooseGameMode : MetroFramework.Forms.MetroForm
     {
-        private int ChosenGameMode;
 
         public ChooseGameMode()
         {
             InitializeComponent();
         }
 
-        public int SendGameMode
-        {
-            get
-            {
-                return ChosenGameMode;
-            }
-        }
 
         private void pbSurvival_Click(object sender, EventArgs e)
         {
-            //ChosenGameMode = 2;
-            this.Close();
+
+            using (Survival survivalForm = new Survival())
+            {
+                if (survivalForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Hide();
+                    survivalForm.ShowDialog();
+
+                }
+            }
         }
 
         private void pbArcade_Click(object sender, EventArgs e)
         {
-            //ChosenGameMode = 1;
-            this.Close();
+            using (Arcade arcadeForm = new Arcade())
+            {
+                if (arcadeForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Hide();
+                    arcadeForm.ShowDialog();
+
+                }
+            }
         }
 
         private void pbPractice_Click(object sender, EventArgs e)
         {
-           // ChosenGameMode = 3;
-            this.Close();
+
+            using (Practice practiceForm = new Practice())
+            {
+                if (practiceForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Hide();
+                    practiceForm.ShowDialog();
+
+                }
+            }
         }
     }
 }

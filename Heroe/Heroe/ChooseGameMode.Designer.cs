@@ -28,53 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbArcade = new System.Windows.Forms.PictureBox();
-            this.pbSurvival = new System.Windows.Forms.PictureBox();
-            this.pbPractice = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbArcade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPractice)).BeginInit();
+            this.pbPractice = new System.Windows.Forms.PictureBox();
+            this.pbSurvival = new System.Windows.Forms.PictureBox();
+            this.pbArcade = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPractice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArcade)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbArcade
+            // pictureBox4
             // 
-            this.pbArcade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pbArcade.Location = new System.Drawing.Point(95, 73);
-            this.pbArcade.Name = "pbArcade";
-            this.pbArcade.Size = new System.Drawing.Size(175, 41);
-            this.pbArcade.TabIndex = 0;
-            this.pbArcade.TabStop = false;
-            this.pbArcade.Click += new System.EventHandler(this.pbArcade_Click);
-            // 
-            // pbSurvival
-            // 
-            this.pbSurvival.BackColor = System.Drawing.Color.Black;
-            this.pbSurvival.Location = new System.Drawing.Point(95, 130);
-            this.pbSurvival.Name = "pbSurvival";
-            this.pbSurvival.Size = new System.Drawing.Size(175, 41);
-            this.pbSurvival.TabIndex = 1;
-            this.pbSurvival.TabStop = false;
-            this.pbSurvival.Click += new System.EventHandler(this.pbSurvival_Click);
+            this.pictureBox4.Location = new System.Drawing.Point(85, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(185, 73);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
             // 
             // pbPractice
             // 
             this.pbPractice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.pbPractice.Location = new System.Drawing.Point(95, 189);
+            this.pbPractice.Location = new System.Drawing.Point(90, 212);
             this.pbPractice.Name = "pbPractice";
             this.pbPractice.Size = new System.Drawing.Size(175, 41);
             this.pbPractice.TabIndex = 2;
             this.pbPractice.TabStop = false;
             this.pbPractice.Click += new System.EventHandler(this.pbPractice_Click);
             // 
-            // pictureBox4
+            // pbSurvival
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(8, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(85, 35);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.pbSurvival.BackColor = System.Drawing.Color.White;
+            this.pbSurvival.Image = global::Heroe.Properties.Resources.Survive;
+            this.pbSurvival.Location = new System.Drawing.Point(90, 153);
+            this.pbSurvival.Name = "pbSurvival";
+            this.pbSurvival.Size = new System.Drawing.Size(180, 53);
+            this.pbSurvival.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSurvival.TabIndex = 1;
+            this.pbSurvival.TabStop = false;
+            this.pbSurvival.Click += new System.EventHandler(this.pbSurvival_Click);
+            // 
+            // pbArcade
+            // 
+            this.pbArcade.BackColor = System.Drawing.Color.White;
+            this.pbArcade.Image = global::Heroe.Properties.Resources.Arcade;
+            this.pbArcade.Location = new System.Drawing.Point(90, 96);
+            this.pbArcade.Name = "pbArcade";
+            this.pbArcade.Size = new System.Drawing.Size(180, 51);
+            this.pbArcade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArcade.TabIndex = 0;
+            this.pbArcade.TabStop = false;
+            this.pbArcade.Click += new System.EventHandler(this.pbArcade_Click);
             // 
             // ChooseGameMode
             // 
@@ -86,10 +90,10 @@
             this.Controls.Add(this.pbSurvival);
             this.Controls.Add(this.pbArcade);
             this.Name = "ChooseGameMode";
-            ((System.ComponentModel.ISupportInitialize)(this.pbArcade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPractice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPractice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArcade)).EndInit();
             this.ResumeLayout(false);
 
         }

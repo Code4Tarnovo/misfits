@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pbSurvival = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Turn = new System.Windows.Forms.Timer(this.components);
             this.pbHero = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSurvival)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHero)).BeginInit();
@@ -45,10 +45,10 @@
             this.pbSurvival.TabIndex = 0;
             this.pbSurvival.TabStop = false;
             // 
-            // timer1
+            // Turn
             // 
-            this.timer1.Interval = 7000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.Turn.Interval = 500;
+            this.Turn.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pbHero
             // 
@@ -79,7 +79,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbSurvival;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Turn;
         private System.Windows.Forms.PictureBox pbHero;
     }
 }

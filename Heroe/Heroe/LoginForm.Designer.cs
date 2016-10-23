@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.pbGuest = new System.Windows.Forms.PictureBox();
             this.pbPlay = new System.Windows.Forms.PictureBox();
             this.pbPassword = new System.Windows.Forms.PictureBox();
             this.pbRegister = new System.Windows.Forms.PictureBox();
             this.pbUsername = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGuest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegister)).BeginInit();
@@ -43,21 +45,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 105);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 32);
-            this.textBox1.TabIndex = 6;
+            this.txtUsername.Location = new System.Drawing.Point(140, 105);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(154, 32);
+            this.txtUsername.TabIndex = 6;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(140, 143);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 32);
-            this.textBox2.TabIndex = 7;
+            this.txtPassword.Location = new System.Drawing.Point(140, 143);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(154, 32);
+            this.txtPassword.TabIndex = 7;
             // 
             // materialLabel1
             // 
@@ -65,7 +67,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(123, 287);
+            this.materialLabel1.Location = new System.Drawing.Point(177, 276);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(95, 18);
@@ -73,14 +75,23 @@
             this.materialLabel1.Text = "I\'m a GUEST";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
+            // pbGuest
+            // 
+            this.pbGuest.Location = new System.Drawing.Point(122, 298);
+            this.pbGuest.Name = "pbGuest";
+            this.pbGuest.Size = new System.Drawing.Size(92, 18);
+            this.pbGuest.TabIndex = 9;
+            this.pbGuest.TabStop = false;
+            // 
             // pbPlay
             // 
-            this.pbPlay.Location = new System.Drawing.Point(184, 207);
+            this.pbPlay.Location = new System.Drawing.Point(150, 181);
             this.pbPlay.Name = "pbPlay";
             this.pbPlay.Size = new System.Drawing.Size(144, 67);
             this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPlay.TabIndex = 4;
             this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
             // 
             // pbPassword
             // 
@@ -93,12 +104,13 @@
             // 
             // pbRegister
             // 
-            this.pbRegister.Location = new System.Drawing.Point(12, 207);
+            this.pbRegister.Location = new System.Drawing.Point(12, 225);
             this.pbRegister.Name = "pbRegister";
             this.pbRegister.Size = new System.Drawing.Size(144, 67);
             this.pbRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRegister.TabIndex = 2;
             this.pbRegister.TabStop = false;
+            this.pbRegister.Click += new System.EventHandler(this.pbRegister_Click);
             // 
             // pbUsername
             // 
@@ -123,9 +135,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 325);
+            this.Controls.Add(this.pbGuest);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pbPlay);
             this.Controls.Add(this.pbPassword);
             this.Controls.Add(this.pbRegister);
@@ -133,6 +146,7 @@
             this.Controls.Add(this.pbLogo);
             this.Name = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbGuest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegister)).EndInit();
@@ -150,9 +164,10 @@
         private System.Windows.Forms.PictureBox pbRegister;
         private System.Windows.Forms.PictureBox pbPassword;
         private System.Windows.Forms.PictureBox pbPlay;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.PictureBox pbGuest;
     }
 }
 
